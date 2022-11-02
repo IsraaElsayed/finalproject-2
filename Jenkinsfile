@@ -1,5 +1,5 @@
 pipeline {
-    #agent {label "lastslave"}
+  
     agent any
 
     stages 
