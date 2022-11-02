@@ -14,7 +14,7 @@ pipeline {
         
         stage('build') {
             steps {
-                sh 'docker build -f dockerfile . -t esraaelsayed/nodejs:latest'
+                sh 'docker build -f Dockerfile . -t esraaelsayed/nodejs:latest'
             }
         }
         
