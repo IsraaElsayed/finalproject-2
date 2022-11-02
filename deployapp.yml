@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-deployment
-  namespace: my-app
+  namespace: app
 spec:
   replicas: 1
   selector:
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: node
-          image: salmatolba/nodejs:latest
+          image: esraaelsayed/nodejs:latest
           ports:
             - name: app
               containerPort: 3000
@@ -24,7 +24,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: load-balancer
-  namespace: my-app
+  namespace: app
 spec:
   type: LoadBalancer
   selector:
