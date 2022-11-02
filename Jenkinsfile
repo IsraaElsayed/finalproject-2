@@ -30,8 +30,8 @@ pipeline {
             steps 
             {
 
-                #sh 'kubectl create namespace my-app'
-                sh 'kubectl apply -f ./deployapp.yaml -n my-app'
+                #sh 'kubectl create namespace app'
+                sh 'kubectl apply -f ./deployapp.yaml -n app'
                 
                 
             }
