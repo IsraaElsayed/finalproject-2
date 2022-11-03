@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: node
-          image: esraaelsayed/nodejs:latest
+          image: israaelsayed/nodejs:latest
           ports:
             - name: app
               containerPort: 3000
