@@ -5,7 +5,7 @@ pipeline {
         
         stage('build') {
             steps {
-                sh 'docker build . -t esraaelsayed/nodejs:latest'
+                sh 'docker build . -t israaelsayed/nodejs:latest'
             }
         }
         
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
 
-                    sh 'docker push esraaelsayed/nodejs:latest'
+                    sh 'docker push israaelsayed/nodejs:latest'
                 }               
                 
                 
