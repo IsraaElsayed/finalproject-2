@@ -28,7 +28,7 @@ pipeline {
             steps 
             {
                 
-                sh 'kubectl apply -f ./deployapp.yaml '
+                sh 'kubectl apply -f deployapp.yaml '
                 
                 
             }
