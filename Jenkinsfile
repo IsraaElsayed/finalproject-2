@@ -11,14 +11,16 @@ pipeline {
         
         stage('artifact') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
+
+                    sh 'docker push esraaelsayed/nodejs:latest'
+                }               
                 
                 
-                sh 'docker push esraaelsayed/nodejs:latest'
                 
-                }
             }
         }
+        
         
         
         stage('deploy') {
@@ -29,6 +31,7 @@ pipeline {
                 
                 
             }
-        }
+        }    
     }
-}    
+}
+   
