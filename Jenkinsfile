@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -11,15 +12,15 @@ pipeline {
         
         stage('artifact') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-
-                    sh 'docker push israaelsayed/nodejs:latest'
-                }               
-                
-                
-                
+                // This step should not normally be used in your script. Consult the inline help for details.
+                    withDockerRegistry(credentialsId: 'docker',url:'') {
+                       sh 'docker push israaelsayed/nodejs:latest'
+                    }               
             }
+                
+                
         }
+        
         
         
         
@@ -34,5 +35,4 @@ pipeline {
         }    
     }
 }
-   
    
