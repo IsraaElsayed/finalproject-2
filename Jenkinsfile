@@ -13,7 +13,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
                 
-                sh 'docker login -u ${username} -p ${pass}'
+                
                 sh 'docker push esraaelsayed/nodejs:latest'
                 
                 }
