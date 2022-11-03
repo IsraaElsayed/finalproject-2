@@ -27,7 +27,7 @@ pipeline {
         stage('deploy') {
             steps 
             {
-                sh 'kubectl create namespace app'
+                
                 sh 'kubectl apply -f ./deployapp.yaml -n app'
                 
                 
